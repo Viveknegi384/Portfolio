@@ -104,6 +104,7 @@ export function Projects() {
                     width: '100%',
                     height: '100%',
                     objectFit: 'cover',
+                    objectPosition: 'center top',
                     filter: 'grayscale(60%) brightness(0.4)',
                     display: 'block',
                   }}
