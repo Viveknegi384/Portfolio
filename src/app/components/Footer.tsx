@@ -39,8 +39,8 @@ export function Footer() {
         {/* Right: social icons */}
         <div style={{ display: 'flex', gap: 12 }}>
           {[
-            { href: 'https://github.com', Icon: Github, label: 'GitHub' },
-            { href: 'https://linkedin.com', Icon: Linkedin, label: 'LinkedIn' },
+            { href: 'https://github.com/Viveknegi384', Icon: Github, label: 'GitHub' },
+            { href: 'https://www.linkedin.com/in/vivek-negi-b8271128b/', Icon: Linkedin, label: 'LinkedIn' },
             { href: 'mailto:viveknegi230384@gmail.com', Icon: Mail, label: 'Email' },
           ].map(({ href, Icon, label }) => (
             <a

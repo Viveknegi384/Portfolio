@@ -12,8 +12,8 @@ const stats = [
 ];
 
 const socials = [
-  { href: 'https://github.com/viveknegi1', Icon: Github, label: 'GitHub' },
-  { href: 'https://linkedin.com/in/vivek-negi', Icon: Linkedin, label: 'LinkedIn' },
+  { href: 'https://github.com/Viveknegi384', Icon: Github, label: 'GitHub' },
+  { href: 'https://www.linkedin.com/in/vivek-negi-b8271128b/', Icon: Linkedin, label: 'LinkedIn' },
   { href: 'mailto:viveknegi230384@gmail.com', Icon: Mail, label: 'Email' },
 ];
 
