@@ -37,11 +37,41 @@ const openTo = [
 export function Contact() {
   const [formData, setFormData] = useState({ name: '', email: '', message: '' });
   const [focused, setFocused] = useState<string | null>(null);
+  const [isSubmitting, setIsSubmitting] = useState(false);
 
-  const handleSubmit = (e: React.FormEvent) => {
+  const handleSubmit = async (e: React.FormEvent) => {
     e.preventDefault();
-    toast.success("Message sent! I'll get back to you soon.");
-    setFormData({ name: '', email: '', message: '' });
+    setIsSubmitting(true);
+
+    try {
+      const response = await fetch('https://api.web3forms.com/submit', {
+        method: 'POST',
+        headers: {
+          'Content-Type': 'application/json',
+          'Accept': 'application/json'
+        },
+        body: JSON.stringify({
+          access_key: import.meta.env.VITE_WEB3FORMS_ACCESS_KEY,
+          name: formData.name,
+          email: formData.email,
+          message: formData.message,
+          subject: `New Portfolio Message from ${formData.name}`,
+        })
+      });
+
+      const result = await response.json();
+
+      if (result.success) {
+        toast.success("Message sent! I'll get back to you soon.");
+        setFormData({ name: '', email: '', message: '' });
+      } else {
+        toast.error('Failed to send message. Please try again or email me directly.');
+      }
+    } catch (error) {
+      toast.error('Something went wrong. Please email me directly at viveknegi230384@gmail.com');
+    } finally {
+      setIsSubmitting(false);
+    }
   };
 
   const handleChange = (
@@ -247,31 +277,37 @@ export function Contact() {
 
               <button
                 type="submit"
+                disabled={isSubmitting}
                 style={{
                   background: 'none',
                   border: '1px solid #2a2a2a',
-                  color: GREEN,
+                  color: isSubmitting ? '#555' : GREEN,
                   fontFamily: MONO,
                   fontSize: 13,
                   padding: '10px 18px',
-                  cursor: 'pointer',
+                  cursor: isSubmitting ? 'not-allowed' : 'pointer',
                   display: 'flex',
                   alignItems: 'center',
                   gap: 8,
                   transition: 'border-color 0.08s, background 0.08s',
                   alignSelf: 'flex-start',
+                  opacity: isSubmitting ? 0.6 : 1,
                 }}
                 onMouseEnter={(e) => {
-                  e.currentTarget.style.borderColor = GREEN;
-                  e.currentTarget.style.background = 'rgba(74,222,128,0.04)';
+                  if (!isSubmitting) {
+                    e.currentTarget.style.borderColor = GREEN;
+                    e.currentTarget.style.background = 'rgba(74,222,128,0.04)';
+                  }
                 }}
                 onMouseLeave={(e) => {
-                  e.currentTarget.style.borderColor = '#2a2a2a';
-                  e.currentTarget.style.background = 'none';
+                  if (!isSubmitting) {
+                    e.currentTarget.style.borderColor = '#2a2a2a';
+                    e.currentTarget.style.background = 'none';
+                  }
                 }}
               >
                 <Send size={13} />
-                ./send-message
+                {isSubmitting ? './sending...' : './send-message'}
               </button>
             </form>
           </div>
