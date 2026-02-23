@@ -10,9 +10,9 @@ const projects = [
     description:
       'AI-powered evaluation platform integrating the Google Gemini API to analyze GitHub profiles, assess code quality, and generate an \'AI Multiplier\' score based on logic efficiency and best practices.',
     image:
-      'https://images.unsplash.com/photo-1568716353609-12ddc5c67f04?crop=entropy&cs=tinysrgb&fit=max&fm=jpg&ixid=M3w3Nzg4Nzd8MHwxfHNlYXJjaHwxfHxBSSUyMGNvZGUlMjBhbmFseXNpcyUyMGRldmVsb3BlciUyMHRlcm1pbmFsfGVufDF8fHx8MTc3MTg1MTU3M3ww&ixlib=rb-4.1.0&q=80&w=1080',
+      '/images/projects/gitrater.png',
     tags: ['React.js', 'Node.js', 'TypeScript', 'Gemini API'],
-    github: 'https://github.com/viveknegi1',
+    github: 'https://github.com/Viveknegi384/gitRater',
     demo: 'https://gitrater.example.com' as string | null,
     index: '01',
   },
@@ -21,10 +21,10 @@ const projects = [
     description:
       'Full-stack MVC booking system featuring real-time statistics, secure JWT authentication (RBAC), Stripe payment integration, and interactive geospatial maps using Leaflet.js.',
     image:
-      'https://images.unsplash.com/photo-1718253819439-dec133a0d7a6?crop=entropy&cs=tinysrgb&fit=max&fm=jpg&ixid=M3w3Nzg4Nzd8MHwxfHNlYXJjaHwxfHxuYXR1cmUlMjB0cmF2ZWwlMjB0b3VyJTIwbW91bnRhaW5zJTIwYm9va2luZ3xlbnwxfHx8fDE3NzE4NTE1NzR8MA&ixlib=rb-4.1.0&q=80&w=1080',
+      '/images/projects/natours.png',
     tags: ['Node.js', 'Express', 'MongoDB', 'Stripe API'],
-    github: 'https://github.com/viveknegi1',
-    demo: 'https://natours.example.com' as string | null,
+    github: 'https://github.com/Viveknegi384/Natours',
+    demo: 'https://natours-tvii.onrender.com' as string | null,
     index: '02',
   },
   {
@@ -32,7 +32,7 @@ const projects = [
     description:
       'Designed and implemented a robust database schema to store, manage, and process student scholarship records utilizing complex SQL queries, joins, and aggregate functions.',
     image:
-      'https://images.unsplash.com/photo-1723746571161-e45723f5db33?crop=entropy&cs=tinysrgb&fit=max&fm=jpg&ixid=M3w3Nzg4Nzd8MHwxfHNlYXJjaHwxfHxkYXRhYmFzZSUyMG1hbmFnZW1lbnQlMjBzdHVkZW50JTIwc2Nob2xhcnNoaXAlMjB1bml2ZXJzaXR5fGVufDF8fHx8MTc3MTg1MTU3NHww&ixlib=rb-4.1.0&q=80&w=1080',
+      '/images/projects/scholarship.png',
     tags: ['MySQL', 'Database Design', 'SQL'],
     github: 'https://github.com/viveknegi1',
     demo: null,
@@ -43,9 +43,9 @@ const projects = [
     description:
       'A comprehensive digital healthcare platform designed to streamline hospital operations, manage patient appointments, and maintain secure medical records.',
     image:
-      'https://images.unsplash.com/photo-1758691462620-9018c602ed3e?crop=entropy&cs=tinysrgb&fit=max&fm=jpg&ixid=M3w3Nzg4Nzd8MHwxfHNlYXJjaHwxfHxob3NwaXRhbCUyMGRpZ2l0YWwlMjBoZWFsdGhjYXJlJTIwbWVkaWNhbCUyMHJlY29yZHN8ZW58MXx8fHwxNzcxODUxNTc0fDA&ixlib=rb-4.1.0&q=80&w=1080',
+      '/images/projects/hospital.png',
     tags: ['React', 'Node.js', 'MongoDB', 'Express'],
-    github: 'https://github.com/viveknegi1',
+    github: 'https://github.com/Viveknegi384/E-Hospital',
     demo: null,
     index: '04',
   },
