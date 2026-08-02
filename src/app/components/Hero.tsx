@@ -41,7 +41,7 @@ export function Hero() {
         fontFamily: MONO,
       }}
     >
-      <div style={{ maxWidth: 1100, margin: '0 auto', width: '100%' }}>
+      <div style={{ maxWidth: 1280, margin: '0 auto', width: '100%' }}>
 
         {/* ── Terminal Window ── */}
         <div style={{ border: '1px solid #1e1e1e' }}>
@@ -57,14 +57,18 @@ export function Hero() {
               gap: 7,
             }}
           >
-            {[1, 2, 3].map((i) => (
+            {[
+              { color: '#dd2524' },
+              { color: '#efba13' },
+              { color: '#01cb21' },
+            ].map(({ color }, i) => (
               <span
                 key={i}
                 style={{
-                  width: 10,
-                  height: 10,
-                  borderRadius: '50%',
-                  background: '#222',
+                  width: 12,
+                  height: 12,
+                  borderRadius: '6px',
+                  background: color,
                   display: 'inline-block',
                 }}
               />
@@ -75,99 +79,142 @@ export function Hero() {
           </div>
 
           {/* Body */}
-          <div style={{ padding: '28px 28px 32px', background: '#0c0c0c' }}>
+          <div style={{ padding: '28px 28px 32px', background: '#0c0c0c' }} className="flex flex-col lg:flex-row lg:gap-12 lg:items-center">
 
-            <div style={{ color: DIM, fontSize: 13, marginBottom: 20 }}>
-              $ whoami
+            {/* ── Left column: all existing text ── */}
+            <div className="flex-1 min-w-0">
+              <div style={{ color: DIM, fontSize: 13, marginBottom: 20 }}>
+                $ whoami
+              </div>
+
+              {/* Name */}
+              <h1
+                style={{
+                  color: '#e0e0e0',
+                  fontSize: 'clamp(2.2rem, 5vw, 3.8rem)',
+                  lineHeight: 1.15,
+                  marginBottom: 12,
+                  fontFamily: MONO,
+                }}
+              >
+                Hi, I'm <span style={{ color: GREEN }}>Vivek Negi</span>
+                <span style={{ opacity: cursorOn ? 1 : 0 }}>_</span>
+              </h1>
+
+              {/* Subtitle */}
+              <div
+                style={{
+                  color: '#666',
+                  fontSize: 'clamp(1rem, 2vw, 1.2rem)',
+                  marginBottom: 24,
+                }}
+              >
+                Full-Stack Developer &amp;{' '}
+                <span style={{ color: '#888' }}>IT Engineering Student</span>
+              </div>
+
+              {/* Bio */}
+              <p
+                style={{
+                  color: '#666',
+                  lineHeight: 1.85,
+                  marginBottom: 32,
+                  fontSize: 14,
+                }}
+              >
+                Passionate about building scalable web applications and solving complex problems through clean architecture. Pursuing Information Technology at AIT Pune with a strong focus on the MERN stack and AI integrations.
+              </p>
+
+              {/* CTAs */}
+              <div
+                style={{
+                  display: 'flex',
+                  flexWrap: 'wrap',
+                  gap: 10,
+                  marginBottom: 22,
+                }}
+              >
+                <TermBtn accent onClick={() => scrollTo('projects')}>
+                  ./view-projects
+                </TermBtn>
+                <TermBtn icon={<Download size={13} />} href="/resume/resume.pdf" download>
+                  Download Resume
+                </TermBtn>
+              </div>
+
+              {/* Social links */}
+              <div style={{ display: 'flex', gap: 24, marginTop: 4 }}>
+                {socials.map(({ href, label }) => (
+                  <a
+                    key={label}
+                    href={href}
+                    target="_blank"
+                    rel="noopener noreferrer"
+                    aria-label={label}
+                    style={{
+                      color: '#555',
+                      display: 'flex',
+                      alignItems: 'center',
+                      textDecoration: 'none',
+                      fontSize: 13,
+                      fontFamily: MONO,
+                      transition: 'color 0.08s',
+                    }}
+                    onMouseEnter={(e) =>
+                      (e.currentTarget.style.color = '#888')
+                    }
+                    onMouseLeave={(e) =>
+                      (e.currentTarget.style.color = '#555')
+                    }
+                  >
+                    {label}
+                  </a>
+                ))}
+              </div>
             </div>
 
-            {/* Name */}
-            <h1
-              style={{
-                color: '#e0e0e0',
-                fontSize: 'clamp(2.2rem, 5vw, 3.8rem)',
-                lineHeight: 1.15,
-                marginBottom: 12,
-                fontFamily: MONO,
-              }}
-            >
-              Hi, I'm <span style={{ color: GREEN }}>Vivek Negi</span>
-              <span style={{ opacity: cursorOn ? 1 : 0 }}>_</span>
-            </h1>
-
-            {/* Subtitle */}
-            <div
-              style={{
-                color: '#666',
-                fontSize: 'clamp(1rem, 2vw, 1.2rem)',
-                marginBottom: 24,
-              }}
-            >
-              Full-Stack Developer &amp;{' '}
-              <span style={{ color: '#888' }}>IT Engineering Student</span>
-            </div>
-
-            {/* Bio */}
-            <p
-              style={{
-                color: '#666',
-                lineHeight: 1.85,
-                marginBottom: 32,
-                maxWidth: 620,
-                fontSize: 14,
-              }}
-            >
-              Passionate about building scalable web applications and solving complex problems through clean architecture. Pursuing Information Technology at AIT Pune with a strong focus on the MERN stack and AI integrations.
-            </p>
-
-            {/* CTAs */}
-            <div
-              style={{
-                display: 'flex',
-                flexWrap: 'wrap',
-                gap: 10,
-                marginBottom: 22,
-              }}
-            >
-              <TermBtn accent onClick={() => scrollTo('projects')}>
-                ./view-projects
-              </TermBtn>
-              <TermBtn icon={<Download size={13} />} href="/resume/resume.pdf" download>
-                Download Resume
-              </TermBtn>
-            </div>
-
-            {/* Social links */}
-            <div style={{ display: 'flex', gap: 20 }}>
-              {socials.map(({ href, Icon, label }) => (
-                <a
-                  key={label}
-                  href={href}
-                  target="_blank"
-                  rel="noopener noreferrer"
-                  aria-label={label}
+            {/* ── Right column: profile image (desktop only) ── */}
+            <div className="hidden lg:flex lg:justify-center lg:items-center lg:shrink-0">
+              <div
+                style={{
+                  position: 'relative',
+                  border: '1px solid #222',
+                  background: '#0a0a0a',
+                  borderRadius: 16,
+                  overflow: 'hidden',
+                  width: 260,
+                  height: 300,
+                }}
+              >
+                {/* Green terminal indicator dot */}
+                <span
                   style={{
-                    color: '#555',
-                    display: 'flex',
-                    alignItems: 'center',
-                    gap: 6,
-                    textDecoration: 'none',
-                    fontSize: 12,
-                    fontFamily: MONO,
-                    transition: 'color 0.08s',
+                    position: 'absolute',
+                    top: 10,
+                    right: 10,
+                    zIndex: 10,
+                    width: 8,
+                    height: 8,
+                    borderRadius: '50%',
+                    background: GREEN,
+                    boxShadow: `0 0 6px ${GREEN}, 0 0 12px ${GREEN}44`,
                   }}
-                  onMouseEnter={(e) =>
-                    (e.currentTarget.style.color = '#888')
-                  }
-                  onMouseLeave={(e) =>
-                    (e.currentTarget.style.color = '#555')
-                  }
-                >
-                  <Icon size={13} />
-                  {label}
-                </a>
-              ))}
+                />
+                <img
+                  src="/images/portfolio.png"
+                  alt="Vivek Negi"
+                  style={{
+                    width: '100%',
+                    height: '100%',
+                    objectFit: 'cover',
+                    objectPosition: 'center top',
+                    display: 'block',
+                    borderRadius: 15,
+                  }}
+                />
+              </div>
             </div>
+
           </div>
 
           {/* Stats bar */}

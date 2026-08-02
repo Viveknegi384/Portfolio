@@ -50,7 +50,7 @@ export function About() {
         {/* Bio */}
         <div style={{ marginBottom: 44, maxWidth: 760 }}>
           <p style={{ color: '#7a7a7a', lineHeight: 1.9, marginBottom: 14, fontSize: 14 }}>
-            I'm a third-year Information Technology engineering student at Army Institute of Technology, Pune. My focus is on full-stack web development, where I enjoy architecting scalable applications using the MERN stack and integrating AI to solve complex real-world problems.
+            I'm a Final-year Information Technology engineering student at Army Institute of Technology, Pune. My focus is on full-stack web development, where I enjoy architecting scalable applications using the MERN stack and integrating AI to solve complex real-world problems.
           </p>
           <p style={{ color: '#6a6a6a', lineHeight: 1.9, fontSize: 14 }}>
             When I'm not writing code or debugging, you can find me participating in competitive programming, mentoring peers in web technologies, or managing events and UI/UX design as the Joint Secretary of the Technical Board.

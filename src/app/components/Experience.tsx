@@ -33,7 +33,7 @@ const experiences: ExperienceItem[] = [
     role: 'Joint Secretary',
     company: 'Technical Board, AIT',
     location: 'Pune, India',
-    period: 'Jul 2024 – Present',
+    period: 'Jul 2024 – May 2025',
     type: 'leadership',
     responsibilities: [
       "Created UI/UX designs for the Technical Board's website.",
@@ -202,6 +202,9 @@ function ExpEntry({ exp, index }: { exp: ExperienceItem; index: number }) {
 }
 
 export function Experience() {
+  // Only show leadership and volunteer roles (as per Figma design)
+  const leadershipRoles = experiences.filter(e => e.type !== 'internship');
+
   return (
     <section
       id="experience"
@@ -212,11 +215,11 @@ export function Experience() {
         fontFamily: MONO,
       }}
     >
-      <div style={{ maxWidth: 1100, margin: '0 auto' }}>
-        <SectionHeader tag="work_history" title="EXPERIENCE" />
+      <div style={{ maxWidth: 1280, margin: '0 auto' }}>
+        <SectionHeader tag="work_history" title="Leadership & Extracurriculars" />
 
         <p style={{ color: '#555', fontSize: 13, marginBottom: 28 }}>
-          // Internships, leadership roles, and volunteer work across the full-stack and community domains.
+          // Leadership positions, technical mentorship, and campus community roles.
         </p>
 
         {/* Timeline label */}
@@ -238,7 +241,7 @@ export function Experience() {
           <span style={{ marginLeft: 'auto' }}>PERIOD / TYPE</span>
         </div>
 
-        {experiences.map((exp, i) => (
+        {leadershipRoles.map((exp, i) => (
           <ExpEntry key={exp.role + exp.company} exp={exp} index={i} />
         ))}
       </div>

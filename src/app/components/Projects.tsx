@@ -13,7 +13,7 @@ const projects = [
       '/images/projects/gitrater.png',
     tags: ['React.js', 'Node.js', 'TypeScript', 'Gemini API'],
     github: 'https://github.com/Viveknegi384/gitRater',
-    demo: 'https://gitrater.example.com' as string | null,
+    demo: 'https://git-rater.vercel.app/' as string | null,
     index: '01',
   },
   {
@@ -28,24 +28,24 @@ const projects = [
     index: '02',
   },
   {
-    title: 'Scholarship Management System',
+    title: 'Merit Match Scholarship Management System',
     description:
-      'Designed and implemented a robust database schema to store, manage, and process student scholarship records utilizing complex SQL queries, joins, and aggregate functions.',
+      'Built a relational database using raw SQL with JOINs and Window Functions for a real-time admin dashboard. Developed RESTful APIs with Node.js/Express, implemented JWT authentication with Role-Based Access Control, and designed a responsive React/Tailwind frontend.',
     image:
       '/images/projects/scholarship.png',
-    tags: ['MySQL', 'Database Design', 'SQL'],
-    github: 'https://github.com/viveknegi1',
+    tags: ['React', 'Node.js', 'Express', 'MySQL', 'Tailwind'],
+    github: 'https://github.com/Viveknegi384/MeritMatch',
     demo: null,
     index: '03',
   },
   {
-    title: 'E-Hospital Management System',
+    title: 'Synapse Grid — Multi-Agent AI Research Platform',
     description:
-      'A comprehensive digital healthcare platform designed to streamline hospital operations, manage patient appointments, and maintain secure medical records.',
+      'Architected a multi-agent AI system using LangChain and Groq API to autonomously execute web research and generate structured Markdown reports. Engineered Search and Reader Agents for live data fetching and scraping, with an interactive Streamlit frontend.',
     image:
-      '/images/projects/hospital.png',
-    tags: ['React', 'Node.js', 'MongoDB', 'Express'],
-    github: 'https://github.com/Viveknegi384/E-Hospital',
+      '/images/projects/synapsegrid.png',
+    tags: ['Python', 'LangChain', 'Groq API', 'Streamlit'],
+    github: 'https://github.com/Viveknegi384/Synapse_Grid',
     demo: null,
     index: '04',
   },

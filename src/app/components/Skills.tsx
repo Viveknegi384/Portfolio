@@ -6,33 +6,33 @@ const GREEN = '#4ade80';
 const skillCategories = [
   {
     category: 'Programming Languages',
-    key: 'languages',
-    skills: ['C++', 'Java', 'JavaScript', 'TypeScript', 'HTML/CSS'],
+    key: 'PROGRAMMING_LANGUAGES',
+    skills: ['C++', 'Core Java', 'Python', 'JavaScript', 'TypeScript', 'HTML/CSS'],
   },
   {
-    category: 'Developer Tools',
-    key: 'dev_tools',
-    skills: ['GitHub', 'VS Code', 'Postman', 'Figma', 'Canva', 'AWS S3'],
+    category: 'Frameworks & Libraries',
+    key: 'FRAMEWORKS_&_LIBRARIES',
+    skills: ['React', 'Node.js', 'Express.js', 'Tailwind CSS', 'LangChain'],
   },
   {
     category: 'Databases & APIs',
-    key: 'databases_apis',
-    skills: ['MongoDB', 'MySQL', 'REST APIs', 'Stripe API', 'JWT Auth'],
+    key: 'DATABASES_&_APIS',
+    skills: ['PostgreSQL', 'MySQL', 'MongoDB', 'REST APIs'],
   },
   {
-    category: 'Frameworks & Platforms',
-    key: 'frameworks',
-    skills: ['React', 'Node.js', 'Express.js', 'Tailwind CSS'],
-  },
-  {
-    category: 'Soft Skills',
-    key: 'soft_skills',
-    skills: ['Team Collaboration', 'Project Management', 'Technical Writing', 'Problem Solving', 'Agile', 'Mentoring'],
+    category: 'Developer Tools',
+    key: 'DEVELOPER_TOOLS',
+    skills: ['Git/GitHub', 'VS Code', 'Postman', 'Figma'],
   },
   {
     category: 'Core Competencies',
-    key: 'core',
-    skills: ['Full-Stack Dev', 'Data Structures', 'Algorithms', 'OOP Concepts', 'UI/UX Design'],
+    key: 'CORE_COMPETENCIES',
+    skills: ['Data Structures', 'Algorithms', 'Full-Stack Dev', 'AI Agents'],
+  },
+  {
+    category: 'Soft Skills',
+    key: 'SOFT_SKILLS',
+    skills: ['Problem Solving', 'Team Collaboration', 'Mentoring', 'Event Management'],
   },
 ];
 
@@ -75,20 +75,20 @@ export function Skills() {
                   color: '#555',
                   fontSize: 12,
                   marginBottom: 10,
-                  letterSpacing: '0.06em',
+                  letterSpacing: '0.07em',
                 }}
               >
-                {cat.category.toUpperCase().replace(/ /g, '_')}
+                {cat.key.toUpperCase()}
               </div>
-              <div style={{ display: 'flex', flexWrap: 'wrap', gap: 5 }}>
+              <div style={{ display: 'flex', flexWrap: 'wrap', gap: 4 }}>
                 {cat.skills.map((skill) => (
                   <span
                     key={skill}
                     style={{
                       color: '#555',
-                      fontSize: 12,
+                      fontSize: 11,
                       border: '1px solid #1e1e1e',
-                      padding: '2px 7px',
+                      padding: '2px 9px',
                       cursor: 'default',
                       transition: 'color 0.08s, border-color 0.08s',
                       whiteSpace: 'nowrap',
