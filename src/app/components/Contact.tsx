@@ -1,5 +1,5 @@
 import { useState } from 'react';
-import { Mail, MapPin, Phone, Send } from 'lucide-react';
+import { Mail, MapPin, Send } from 'lucide-react';
 import { toast } from 'sonner';
 import { SectionHeader } from './About';
 
@@ -13,12 +13,7 @@ const contactInfo = [
     value: 'viveknegi230384@gmail.com',
     href: 'mailto:viveknegi230384@gmail.com',
   },
-  {
-    icon: Phone,
-    label: 'Phone',
-    value: '+91-6397797228',
-    href: 'tel:+916397797228',
-  },
+
   {
     icon: MapPin,
     label: 'Location',
